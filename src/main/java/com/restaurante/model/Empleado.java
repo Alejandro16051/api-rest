@@ -34,8 +34,8 @@ public class Empleado {
 	private String domicilio_empleado;
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_sede")
+	@ManyToOne(fetch = FetchType.LAZY, targetEntity = Sede.class)
+	@JoinColumn(name = "id_sede", referencedColumnName = "id_sede")
 	private Sede tb_sede;
 	
 	

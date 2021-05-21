@@ -1,5 +1,6 @@
 package com.restaurante.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,9 @@ public class Sede {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_sede")
 	private int id_sede;
+	
 	private String nombre_sede;
 	private String direccion_sede;
 	private String latitud_sede;
