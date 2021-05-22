@@ -27,13 +27,13 @@ public class Empleado {
 	private String apellido_empleado;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date fechaNac_empleado;
+	private Date fechanac_empleado;
 	
 	private String telefono_empleado;
 	private String correo_empleado;
 	private String domicilio_empleado;
 	
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	/*@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })*/
 	@ManyToOne(fetch = FetchType.LAZY, targetEntity = Sede.class)
 	@JoinColumn(name = "id_sede", referencedColumnName = "id_sede")
 	private Sede tb_sede;
@@ -73,11 +73,11 @@ public class Empleado {
 	}
 
 	public Date getFechaNac_empleado() {
-		return fechaNac_empleado;
+		return fechanac_empleado;
 	}
 
 	public void setFechaNac_empleado(Date fechaNac_empleado) {
-		this.fechaNac_empleado = fechaNac_empleado;
+		this.fechanac_empleado = fechaNac_empleado;
 	}
 
 	public String getTelefono_empleado() {
