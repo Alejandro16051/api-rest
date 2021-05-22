@@ -2,6 +2,7 @@ package com.restaurante.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,7 +22,9 @@ public class Empleado {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_empleado")
 	private int id_empleado;
+	
 	private String dni_empleado;
 	private String nombre_empleado;
 	private String apellido_empleado;
@@ -34,9 +37,11 @@ public class Empleado {
 	private String domicilio_empleado;
 	
 	/*@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })*/
-	@ManyToOne(fetch = FetchType.LAZY, targetEntity = Sede.class)
+	/*@ManyToOne(fetch = FetchType.LAZY, targetEntity = Sede.class)
 	@JoinColumn(name = "id_sede", referencedColumnName = "id_sede")
-	private Sede tb_sede;
+	private Sede tb_sede;*/
+	
+	private int id_sede;
 	
 	
 
@@ -104,12 +109,28 @@ public class Empleado {
 		this.domicilio_empleado = domicilio_empleado;
 	}
 
-	public Sede getTb_sede() {
+	public Date getFechanac_empleado() {
+		return fechanac_empleado;
+	}
+
+	public void setFechanac_empleado(Date fechanac_empleado) {
+		this.fechanac_empleado = fechanac_empleado;
+	}
+
+	public int getId_sede() {
+		return id_sede;
+	}
+
+	public void setId_sede(int id_sede) {
+		this.id_sede = id_sede;
+	}
+
+	/*public Sede getTb_sede() {
 		return tb_sede;
 	}
 
 	public void setTb_sede(Sede tb_sede) {
 		this.tb_sede = tb_sede;
-	}
+	}*/
 
 }

@@ -31,6 +31,7 @@ public class Sede {
 	@JoinColumn(name = "id_estado")
 	private Estado tb_estado;*/
 
+	private int id_estado;
 	
 	
 	public int getId_sede() {
@@ -72,6 +73,14 @@ public class Sede {
 	public void setLongitud_sede(String longitud_sede) {
 		this.longitud_sede = longitud_sede;
 	}
+	
+	public int getId_estado() {
+		return id_estado;
+	}
+
+	public void setId_estado(int id_estado) {
+		this.id_estado = id_estado;
+	}
 /*
 	public Estado getTb_estado() {
 		return tb_estado;
@@ -80,6 +89,7 @@ public class Sede {
 	public void setTb_estado(Estado tb_estado) {
 		this.tb_estado = tb_estado;
 	}*/
+
 	
 
 }
