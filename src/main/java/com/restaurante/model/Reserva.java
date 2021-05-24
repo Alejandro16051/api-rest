@@ -1,6 +1,6 @@
 package com.restaurante.model;
 
-import java.util.Date;
+//import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,28 +8,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+//import javax.persistence.Temporal;
+//import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "tb_reserva")
 public class Reserva {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_reserva")
 	private int id_reserva;
-	
+
 	private int id_mesa;
 	private int id_estado;
-	
-	/*@Temporal(TemporalType.TIMESTAMP)*/
+
+	/* @Temporal(TemporalType.TIMESTAMP) */
 	private String fechainicio_reserva;
 	/*
-	@Temporal(TemporalType.TIMESTAMP)*/
+	 * @Temporal(TemporalType.TIMESTAMP)
+	 */
 	private String fechafin_reserva;
-	
-	
 
 	public int getId_reserva() {
 		return id_reserva;
@@ -70,7 +69,5 @@ public class Reserva {
 	public void setFechafin_reserva(String fechafin_reserva) {
 		this.fechafin_reserva = fechafin_reserva;
 	}
-
-	
 
 }

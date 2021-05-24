@@ -4,46 +4,47 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_empleado")
 public class Empleado {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_empleado")
 	private int id_empleado;
-	
+
 	private String dni_empleado;
 	private String nombre_empleado;
 	private String apellido_empleado;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechanac_empleado;
-	
+
 	private String telefono_empleado;
 	private String correo_empleado;
 	private String domicilio_empleado;
-	
-	/*@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })*/
-	/*@ManyToOne(fetch = FetchType.LAZY, targetEntity = Sede.class)
-	@JoinColumn(name = "id_sede", referencedColumnName = "id_sede")
-	private Sede tb_sede;*/
-	
+
+	/* @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" }) */
+	/*
+	 * @ManyToOne(fetch = FetchType.LAZY, targetEntity = Sede.class)
+	 * 
+	 * @JoinColumn(name = "id_sede", referencedColumnName = "id_sede") private Sede
+	 * tb_sede;
+	 */
+
 	private int id_sede;
-	
-	
 
 	public int getId_empleado() {
 		return id_empleado;
@@ -125,12 +126,10 @@ public class Empleado {
 		this.id_sede = id_sede;
 	}
 
-	/*public Sede getTb_sede() {
-		return tb_sede;
-	}
-
-	public void setTb_sede(Sede tb_sede) {
-		this.tb_sede = tb_sede;
-	}*/
+	/*
+	 * public Sede getTb_sede() { return tb_sede; }
+	 * 
+	 * public void setTb_sede(Sede tb_sede) { this.tb_sede = tb_sede; }
+	 */
 
 }

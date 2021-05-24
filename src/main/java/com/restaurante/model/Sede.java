@@ -2,38 +2,39 @@ package com.restaurante.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_sede")
 public class Sede {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_sede")
 	private int id_sede;
-	
+
 	private String nombre_sede;
 	private String direccion_sede;
 	private String latitud_sede;
 	private String longitud_sede;
 	/*
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_estado")
-	private Estado tb_estado;*/
+	 * @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	 * 
+	 * @ManyToOne(fetch = FetchType.LAZY)
+	 * 
+	 * @JoinColumn(name = "id_estado") private Estado tb_estado;
+	 */
 
 	private int id_estado;
-	
-	
+
 	public int getId_sede() {
 		return id_sede;
 	}
@@ -73,7 +74,7 @@ public class Sede {
 	public void setLongitud_sede(String longitud_sede) {
 		this.longitud_sede = longitud_sede;
 	}
-	
+
 	public int getId_estado() {
 		return id_estado;
 	}
@@ -81,15 +82,10 @@ public class Sede {
 	public void setId_estado(int id_estado) {
 		this.id_estado = id_estado;
 	}
-/*
-	public Estado getTb_estado() {
-		return tb_estado;
-	}
-
-	public void setTb_estado(Estado tb_estado) {
-		this.tb_estado = tb_estado;
-	}*/
-
-	
+	/*
+	 * public Estado getTb_estado() { return tb_estado; }
+	 * 
+	 * public void setTb_estado(Estado tb_estado) { this.tb_estado = tb_estado; }
+	 */
 
 }
